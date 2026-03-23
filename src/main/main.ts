@@ -68,14 +68,17 @@ import {
   restoreOriginalProxyEnv,
   setSystemProxyEnabled,
 } from './libs/systemProxy';
+import {
+  INVALID_FILE_NAME_PATTERN,
+  sanitizeExportFileName,
+  MIN_MEMORY_USER_MEMORIES_MAX_ITEMS,
+  MAX_MEMORY_USER_MEMORIES_MAX_ITEMS,
+} from '../common/constants';
 
 // 设置应用程序名称
 app.name = APP_NAME;
 app.setName(APP_NAME);
 
-const INVALID_FILE_NAME_PATTERN = /[<>:"/\\|?*\u0000-\u001F]/g;
-const MIN_MEMORY_USER_MEMORIES_MAX_ITEMS = 1;
-const MAX_MEMORY_USER_MEMORIES_MAX_ITEMS = 60;
 const IPC_MESSAGE_CONTENT_MAX_CHARS = 120_000;
 const IPC_UPDATE_CONTENT_MAX_CHARS = 120_000;
 const IPC_STRING_MAX_CHARS = 4_000;
@@ -106,11 +109,6 @@ const MIME_EXTENSION_MAP: Record<string, string> = {
   'text/markdown': '.md',
   'application/json': '.json',
   'text/csv': '.csv',
-};
-
-const sanitizeExportFileName = (value: string): string => {
-  const sanitized = value.replace(INVALID_FILE_NAME_PATTERN, ' ').replace(/\s+/g, ' ').trim();
-  return sanitized || 'cowork-session';
 };
 
 const sanitizeAttachmentFileName = (value?: string): string => {

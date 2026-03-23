@@ -41,12 +41,7 @@ const AUTO_SCROLL_THRESHOLD = 120;
 const NAV_HIDE_DELAY = 3000;
 const NAV_SCROLL_LOCK_DURATION = 500;
 const NAV_BOTTOM_SNAP_THRESHOLD = 20;
-const INVALID_FILE_NAME_PATTERN = /[<>:"/\\|?*\u0000-\u001F]/g;
-
-const sanitizeExportFileName = (value: string): string => {
-  const sanitized = value.replace(INVALID_FILE_NAME_PATTERN, ' ').replace(/\s+/g, ' ').trim();
-  return sanitized || 'cowork-session';
-};
+import { sanitizeExportFileName } from '../../../common/constants';
 
 const formatExportTimestamp = (value: Date): string => {
   const pad = (num: number): string => String(num).padStart(2, '0');
