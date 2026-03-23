@@ -232,6 +232,7 @@ export interface AppConfig {
     newChat: string;
     search: string;
     settings: string;
+    focusInput: string;
     [key: string]: string | undefined;
   };
 }
@@ -418,6 +419,7 @@ export const defaultConfig: AppConfig = {
     newChat: 'Ctrl+N',
     search: 'Ctrl+F',
     settings: 'Ctrl+,',
+    focusInput: 'Ctrl+L',
   }
 };
 
