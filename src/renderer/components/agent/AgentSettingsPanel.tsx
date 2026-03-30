@@ -255,7 +255,7 @@ const AgentSettingsPanel: React.FC<AgentSettingsPanelProps> = ({ agentId, onClos
           )}
 
           {activeTab === 'skills' && (
-            <AgentSkillSelector selectedSkillIds={skillIds} onChange={setSkillIds} variant="expanded" />
+            <AgentSkillSelector selectedSkillIds={skillIds} onChange={setSkillIds} />
           )}
 
           {activeTab === 'im' && (

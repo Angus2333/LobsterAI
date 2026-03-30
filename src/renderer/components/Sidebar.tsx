@@ -397,7 +397,7 @@ const SidebarAgentList: React.FC<{
             }`}
             onClick={() => handleSwitch(agent.id)}
           >
-            <span className="text-base leading-none">{agent.icon || '🦞'}</span>
+            <span className="text-base leading-none">{agent.icon || (agent.id === 'main' ? '🦞' : '🤖')}</span>
             <span className="truncate flex-1 text-xs font-medium">{agent.name}</span>
           </div>
         ))}
