@@ -86,6 +86,7 @@ export default {
             h3: { color: 'var(--yde-text-primary)' },
             h4: { color: 'var(--yde-text-primary)' },
             strong: { color: 'var(--yde-text-primary)' },
+            table: { marginTop: '0', marginBottom: '0' },
           },
         },
       },
